@@ -15,6 +15,12 @@
                 event.preventDefault();
             }
         });
+        let devtools = /./;
+        Object.defineProperty(devtools, 'toString', {
+            get: function () {
+                window.location.reload(); // Recharger la page si l'inspecteur est ouvert
+            }
+        });
     </script>
     <script>
         document.addEventListener('keydown', function(event) {
