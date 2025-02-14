@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script>
-        document.addEventListener("keydown", function(event) {
-            if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'l') {
-                window.location.href = "connexion.html";
+        <script>
+        // Fonction pour détecter si les outils de développement sont ouverts
+        function detectDevTools() {
+            const widthThreshold = 160;
+            const heightThreshold = 100;
+            const devtools = window.outerWidth - window.innerWidth > widthThreshold || window.outerHeight - window.innerHeight > heightThreshold;
+            if (devtools) {
+                window.location.reload(); // Recharger la page si les outils sont ouverts
             }
-        });
-        document.addEventListener("contextmenu", function(event) {
-    event.preventDefault();
-});
-        document.addEventListener("keydown", function(event) {
-            if ((event.ctrlKey && event.key === "c") || (event.ctrlKey && event.key === "v") || (event.ctrlKey && event.key === "x")) {
-                event.preventDefault();
-            }
-        });
-        let devtools = /./;
-        Object.defineProperty(devtools, 'toString', {
-            get: function () {
-                window.location.reload(); // Recharger la page si l'inspecteur est ouvert
-            }
-        });
-    </script>
-    <script>
+        }
+
+        // Détecter l'ouverture des outils de développement toutes les 500ms
+        setInterval(detectDevTools, 500);
+
+        // Désactiver les raccourcis clavier
         document.addEventListener('keydown', function(event) {
-            if (event.ctrlKey && (event.key === 'I' || event.key === 'i' || event.key === 'U' || event.key === 'u' || event.key === 'J' || event.key === 'j')) {
+            if ((event.ctrlKey && event.key === 'I') || 
+                (event.ctrlKey && event.key === 'U') || 
+                (event.ctrlKey && event.key === 'J') || 
+                event.key === 'F12') {
                 event.preventDefault();
             }
+        });
+
+        // Désactiver le clic droit
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
         });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion -</title>
+    <title>Connexion</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
