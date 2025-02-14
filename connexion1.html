@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>Connexion - KogziPhoto</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ff9800;
+            --secondary-color: #2196f3;
+            --text-color: #fff;
+            --background-color: #1a1a1a;
+            --input-bg: #2c2c2c;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,61 +22,73 @@
         }
 
         body {
+            min-height: 100vh;
+            background: var(--background-color);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-            color: white;
+            color: var(--text-color);
         }
 
         .login-container {
-            background: rgba(255, 255, 255, 0.1);
+            background: #2c2c2c;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            width: 350px;
             text-align: center;
         }
 
-        h2 {
-            margin-bottom: 1rem;
+        .login-container h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
-        input {
+        .login-container input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
+            background: var(--input-bg);
             border: none;
             border-radius: 5px;
+            color: white;
             outline: none;
         }
 
-        button {
+        .login-container button {
             width: 100%;
             padding: 10px;
+            background: var(--primary-color);
             border: none;
-            border-radius: 5px;
-            background: #ff9800;
             color: white;
             font-size: 1rem;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: 0.3s;
         }
 
-        button:hover {
+        .login-container button:hover {
             background: #e68900;
+        }
+
+        .login-container a {
+            display: block;
+            margin-top: 1rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h2>Connexion</h2>
-        <form>
+        <form action="dashboard.html" method="POST">
             <input type="text" placeholder="Nom d'utilisateur" required>
             <input type="password" placeholder="Mot de passe" required>
             <button type="submit">Se connecter</button>
         </form>
+        <a href="#">Mot de passe oublié ?</a>
     </div>
 </body>
 </html>
