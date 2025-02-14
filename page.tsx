@@ -6,51 +6,46 @@ import { Badge } from "@/components/ui/badge"
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#000000]">
       {/* Header */}
-      <header className="w-full p-4 flex justify-between items-center border-b border-gray-800">
-        <div className="w-32 h-8 bg-gray-800 rounded flex items-center justify-center">LOGO EDIT</div>
-        <div className="flex gap-2">
+      <header className="w-full bg-[#000000] p-6 flex justify-between items-center">
+        <div className="w-36 h-10 bg-[#f3f3f3] rounded flex items-center justify-center text-black">LOGO EDIT</div>
+        <div className="flex gap-3">
           {["Portfolio", "Services", "Contact", "À propos"].map((item) => (
-            <button key={item} className="px-4 py-1 rounded-full bg-gray-800/50 hover:bg-gray-700 transition-colors">
+            <button
+              key={item}
+              className="px-6 py-1.5 rounded-full bg-[#6B4D85] text-white hover:bg-[#7e5c99] transition-colors text-sm"
+            >
               {item}
             </button>
           ))}
         </div>
-        <Image
-          src="/placeholder.svg?height=100&width=150"
-          width={150}
-          height={100}
-          alt="Camera"
-          className="object-contain"
-        />
+        <div className="w-[200px] h-[120px] relative">
+          <Image src="/placeholder.svg?height=120&width=200" alt="Camera" fill className="object-contain" />
+        </div>
       </header>
 
       {/* Main Content */}
-      <main className="relative p-8">
+      <main className="w-full min-h-[calc(100vh-180px)] relative">
         {/* Background Image */}
-        <div className="fixed inset-0 z-0">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YnzgupP2Oixhz6Zi68kwcClOuOxPxi.png"
-            alt="Background"
-            fill
-            className="object-cover opacity-50"
-            priority
-          />
-        </div>
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YnzgupP2Oixhz6Zi68kwcClOuOxPxi.png"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
 
         {/* Grid */}
-        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-2 gap-6 mt-12">
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-2 gap-8 p-8">
           {[1, 2, 3, 4].map((i) => (
-            <Card key={i} className="group relative bg-gray-800/50 backdrop-blur-sm overflow-hidden">
+            <Card key={i} className="group relative bg-[#f3f3f3] rounded-lg overflow-hidden">
               <div className="aspect-[3/2] relative">
-                <Image
-                  src="/placeholder.svg?height=300&width=450"
-                  alt={`Gallery ${i}`}
-                  fill
-                  className="object-cover transition-transform group-hover:scale-105"
-                />
-                <Badge className="absolute bottom-4 right-4 bg-green-500 hover:bg-green-600" variant="secondary">
+                <Image src="/placeholder.svg?height=300&width=450" alt={`Gallery ${i}`} fill className="object-cover" />
+                <Badge
+                  className="absolute bottom-4 right-4 bg-[#4CAF50] hover:bg-[#45a049] text-white"
+                  variant="secondary"
+                >
                   K
                 </Badge>
               </div>
