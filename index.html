@@ -16,31 +16,35 @@
             font-family: 'Poppins', sans-serif;
             background-color: #000000;
             color: white;
+            min-height: 100vh;
         }
 
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
+            position: relative;
+            height: 90vh;
             background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MddDoyyaAUrr7e9cMUtmdW042TP1KW.png');
             background-size: cover;
             background-position: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
         }
 
-        /* Le reste du CSS reste identique */
         .logo {
-            width: 350px;
-            height: 60px;
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            width: 800px;
+            height: 300px;
             background-image: url('Photo.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            filter: invert(1);
         }
 
         .nav {
+            position: absolute;
+            top: 20px;
+            right: 40px;
             display: flex;
             gap: 16px;
         }
@@ -64,96 +68,79 @@
         }
 
         .camera-image {
-            width: 200px;
-            height: 120px;
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px;
+            height: 400px;
             background-image: url('camera.jpg');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
         }
 
-        .main-content {
-            position: relative;
-            min-height: calc(100vh - 160px);
-            background-image: url('fond.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 40px;
-        }
-
-        .grid {
+        .categories {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 20px;
+            padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .card {
+        .category {
             position: relative;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            height: 300px;
+            perspective: 1000px;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-image {
+        .category-stack {
+            position: relative;
             width: 100%;
-            padding-top: 66.67%; /* 3:2 aspect ratio */
+            height: 100%;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+        }
+
+        .category:hover .category-stack {
+            transform: translateZ(-100px);
+        }
+
+        .category-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s, opacity 0.5s;
+            backface-visibility: hidden;
         }
 
-        .card:hover .card-image {
-            transform: scale(1.1);
+        .category:hover .category-image:nth-child(1) {
+            transform: translateZ(0) translateX(0);
+            opacity: 1;
         }
 
-        .badge {
+        .category:hover .category-image:nth-child(2) {
+            transform: translateZ(-50px) translateX(-20px);
+            opacity: 0.8;
+        }
+
+        .category:hover .category-image:nth-child(3) {
+            transform: translateZ(-100px) translateX(-40px);
+            opacity: 0.6;
+        }
+
+        .category-title {
             position: absolute;
-            bottom: 16px;
-            right: 16px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 14px;
+            bottom: 20px;
+            left: 20px;
+            font-size: 24px;
             font-weight: 600;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
             color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover .card-content {
-            transform: translateY(0);
-        }
-
-        .card-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .card-description {
-            font-size: 14px;
-            font-weight: 300;
-            opacity: 0.9;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 10;
         }
     </style>
 </head>
@@ -169,35 +156,37 @@
         <div class="camera-image"></div>
     </header>
 
-    <main class="main-content">
-        <div class="grid">
-            <div class="card">
-                <div class="card-image" style="background-image: url('paysage.jpg');"></div>
-                <div class="card-content">
-                    <h2 class="card-title">Paysage</h2>
-                    <p class="card-description">Découvrez nos magnifiques paysages</p>
-                </div>
+    <main class="categories">
+        <div class="category">
+            <h2 class="category-title">Paysage</h2>
+            <div class="category-stack">
+                <div class="category-image" style="background-image: url('paysage.jpg');"></div>
+                <div class="category-image" style="background-image: url('paysage2.jpg');"></div>
+                <div class="category-image" style="background-image: url('paysage3.jpg');"></div>
             </div>
-            <div class="card">
-                <div class="card-image" style="background-image: url('urbain.jpg');"></div>
-                <div class="card-content">
-                    <h2 class="card-title">Urbain</h2>
-                    <p class="card-description">Explorez la vie urbaine en images</p>
-                </div>
+        </div>
+        <div class="category">
+            <h2 class="category-title">Urbain</h2>
+            <div class="category-stack">
+                <div class="category-image" style="background-image: url('urbain.jpg');"></div>
+                <div class="category-image" style="background-image: url('urbain2.jpg');"></div>
+                <div class="category-image" style="background-image: url('urbain3.jpg');"></div>
             </div>
-            <div class="card">
-                <div class="card-image" style="background-image: url('nourriture.jpg');"></div>
-                <div class="card-content">
-                    <h2 class="card-title">Nourriture</h2>
-                    <p class="card-description">Savourez nos photos culinaires</p>
-                </div>
+        </div>
+        <div class="category">
+            <h2 class="category-title">Nourriture</h2>
+            <div class="category-stack">
+                <div class="category-image" style="background-image: url('nourriture.jpg');"></div>
+                <div class="category-image" style="background-image: url('nourriture2.jpg');"></div>
+                <div class="category-image" style="background-image: url('nourriture3.jpg');"></div>
             </div>
-            <div class="card">
-                <div class="card-image" style="background-image: url('personnes.jpg');"></div>
-                <div class="card-content">
-                    <h2 class="card-title">Personnes</h2>
-                    <p class="card-description">Portraits et scènes de vie</p>
-                </div>
+        </div>
+        <div class="category">
+            <h2 class="category-title">Personnes</h2>
+            <div class="category-stack">
+                <div class="category-image" style="background-image: url('personnes.jpg');"></div>
+                <div class="category-image" style="background-image: url('personnes2.jpg');"></div>
+                <div class="category-image" style="background-image: url('personnes3.jpg');"></div>
             </div>
         </div>
     </main>
