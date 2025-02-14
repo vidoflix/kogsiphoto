@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KogziPhoto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ff9800;
+            --secondary-color: #2196f3;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,10 +22,8 @@
 
         body {
             min-height: 100vh;
-            background-image: url('fond.jpg'); /* Change this to your preferred background image */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-color: var(--background-color);
+            color: var(--text-color);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -29,94 +35,116 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 3rem;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(12px);
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
             color: white;
-            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .header a {
             color: white;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s;
+            font-size: 1.1rem;
+            font-weight: 300;
+            transition: color 0.3s, transform 0.3s;
         }
 
         .header a:hover {
-            color: #ff9800;
+            color: var(--primary-color);
+            transform: translateY(-2px);
         }
 
         .logo-container img {
-            width: 100px;
-            height: 40px;
-            border-radius: 20px;
+            width: 120px;
+            height: auto;
         }
 
         .main-content {
             width: 90%;
             max-width: 1200px;
-            padding: 3rem 0;
+            padding: 4rem 0;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .category-card {
             position: relative;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .category-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         .category-card img {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
         }
 
         .category-content {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.6);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 15px;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover .category-content {
+            transform: translateY(0);
         }
 
         .category-title {
             font-size: 1.5rem;
-            text-align: center;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-description {
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .category-card:hover .category-description {
+            opacity: 1;
         }
 
         .footer {
             width: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
             color: white;
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
             margin-top: auto;
         }
 
         @media (max-width: 768px) {
             .header {
                 padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
             }
             .logo-container img {
-                width: 80px;
-                height: 30px;
-                border-radius: 15px;
+                width: 100px;
             }
             .main-content {
                 grid-template-columns: 1fr;
+                padding: 2rem 0;
             }
         }
     </style>
@@ -125,7 +153,7 @@
     <header class="header">
         <a href="#">Contact</a>
         <div class="logo-container">
-            <img src="/path-to-your-logo.png" alt="Logo du site">
+            <img src="Photo.png" alt="Logo KogziPhoto">
         </div>
         <a href="#">À propos</a>
     </header>
@@ -135,30 +163,35 @@
             <img src="paysage.jpg" alt="Paysage">
             <div class="category-content">
                 <h2 class="category-title">Paysage</h2>
+                <p class="category-description">Découvrez la beauté naturelle à travers nos clichés de paysages époustouflants.</p>
             </div>
         </a>
         <a href="urbain.html" class="category-card">
             <img src="urbain.jpg" alt="Urbain">
             <div class="category-content">
                 <h2 class="category-title">Urbain</h2>
+                <p class="category-description">Explorez l'architecture et la vie citadine à travers nos photos urbaines.</p>
             </div>
         </a>
         <a href="nourriture.html" class="category-card">
             <img src="nourriture.jpg" alt="Nourriture">
             <div class="category-content">
                 <h2 class="category-title">Nourriture</h2>
+                <p class="category-description">Savourez des images alléchantes de plats et de délices culinaires.</p>
             </div>
         </a>
         <a href="personnes.html" class="category-card">
             <img src="personnes.jpg" alt="Personnes">
             <div class="category-content">
                 <h2 class="category-title">Personnes</h2>
+                <p class="category-description">Capturez l'essence humaine à travers nos portraits et scènes de vie.</p>
             </div>
         </a>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Tous droits réservés</p>
+        <p>&copy; 2024 KogziPhoto - Tous droits réservés</p>
     </footer>
 </body>
 </html>
+
