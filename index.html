@@ -9,74 +9,74 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
             min-height: 100vh;
-            background-color: #000;
+            background-image: url('background.jpg'); /* Change this to your preferred background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .header {
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
+            padding: 1.5rem 3rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            color: white;
         }
 
         .header a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
         }
 
-        .logo-container {
-            height: 50px;
-            display: flex;
-            align-items: center;
+        .header a:hover {
+            color: #ff9800;
         }
 
         .logo-container img {
-            height: 100%;
-            width: auto;
+            height: 50px;
         }
 
         .main-content {
-            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5GKAa3IbMXlG2G6gBPO0AJcMLt7USS.png');
-            background-size: cover;
-            background-position: center;
-            min-height: calc(100vh - 60px);
-            padding: 2rem;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            width: 90%;
             max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 3rem;
+            padding: 3rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
         .category-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .category-card img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
+            border-radius: 15px 15px 0 0;
         }
 
         .category-content {
@@ -87,29 +87,23 @@
         .category-title {
             font-size: 1.5rem;
             color: #333;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .footer {
-            background-color: #000;
-            color: #666;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
             text-align: center;
             padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: auto;
         }
 
         @media (max-width: 768px) {
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .header {
                 padding: 1rem;
             }
-            
-            .logo-container {
+            .logo-container img {
                 height: 40px;
             }
         }
@@ -125,32 +119,30 @@
     </header>
 
     <main class="main-content">
-        <div class="categories-grid">
-            <a href="paysage.html" class="category-card">
-                <img src="paysage.jpg" alt="Paysage">
-                <div class="category-content">
-                    <h2 class="category-title">Paysage</h2>
-                </div>
-            </a>
-            <a href="urbain.html" class="category-card">
-                <img src="urbain.jpg" alt="Urbain">
-                <div class="category-content">
-                    <h2 class="category-title">Urbain</h2>
-                </div>
-            </a>
-            <a href="nourriture.html" class="category-card">
-                <img src="nourriture.jpg" alt="Nourriture">
-                <div class="category-content">
-                    <h2 class="category-title">Nourriture</h2>
-                </div>
-            </a>
-            <a href="personnes.html" class="category-card">
-                <img src="personnes.jpg" alt="Personnes">
-                <div class="category-content">
-                    <h2 class="category-title">Personnes</h2>
-                </div>
-            </a>
-        </div>
+        <a href="paysage.html" class="category-card">
+            <img src="paysage.jpg" alt="Paysage">
+            <div class="category-content">
+                <h2 class="category-title">Paysage</h2>
+            </div>
+        </a>
+        <a href="urbain.html" class="category-card">
+            <img src="urbain.jpg" alt="Urbain">
+            <div class="category-content">
+                <h2 class="category-title">Urbain</h2>
+            </div>
+        </a>
+        <a href="nourriture.html" class="category-card">
+            <img src="nourriture.jpg" alt="Nourriture">
+            <div class="category-content">
+                <h2 class="category-title">Nourriture</h2>
+            </div>
+        </a>
+        <a href="personnes.html" class="category-card">
+            <img src="personnes.jpg" alt="Personnes">
+            <div class="category-content">
+                <h2 class="category-title">Personnes</h2>
+            </div>
+        </a>
     </main>
 
     <footer class="footer">
