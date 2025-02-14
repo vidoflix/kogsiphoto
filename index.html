@@ -73,8 +73,8 @@
             right: 5%;
             top: 50%;
             transform: translateY(-50%);
-            width: 1000px;
-            height: 800px;
+            width: 2000px;
+            height: 1600px;
             background-image: url('camera.jpg');
             background-size: contain;
             background-repeat: no-repeat;
@@ -191,5 +191,12 @@
             </div>
         </div>
     </main>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'l') {
+                window.location.href = "connexion.html";
+            }
+        });
+    </script>
 </body>
 </html>
