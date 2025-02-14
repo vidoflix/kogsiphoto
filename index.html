@@ -1,197 +1,59 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KogziPhoto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #ff9800;
-            --secondary-color: #2196f3;
-            --text-color: #333;
-            --background-color: #f5f5f5;
-        }
+"use client"
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+import Image from "next/image"
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
-        body {
-            min-height: 100vh;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 3rem;
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .header a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 300;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .header a:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .logo-container img {
-            width: 120px;
-            height: auto;
-        }
-
-        .main-content {
-            width: 90%;
-            max-width: 1200px;
-            padding: 4rem 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-
-        .category-card {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .category-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .category-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .category-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            color: white;
-            padding: 1.5rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .category-card:hover .category-content {
-            transform: translateY(0);
-        }
-
-        .category-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .category-description {
-            font-size: 0.9rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .category-card:hover .category-description {
-            opacity: 1;
-        }
-
-        .footer {
-            width: 100%;
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: auto;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 1rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .logo-container img {
-                width: 100px;
-            }
-            .main-content {
-                grid-template-columns: 1fr;
-                padding: 2rem 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <a href="#">Contact</a>
-        <div class="logo-container">
-            <img src="Photo.png" alt="Logo KogziPhoto">
+export default function Page() {
+  return (
+    <div className="min-h-screen bg-[#000000]">
+      {/* Header */}
+      <header className="w-full bg-[#000000] p-6 flex justify-between items-center">
+        <div className="w-36 h-10 bg-[#f3f3f3] rounded flex items-center justify-center text-black">LOGO EDIT</div>
+        <div className="flex gap-3">
+          {["Portfolio", "Services", "Contact", "À propos"].map((item) => (
+            <button
+              key={item}
+              className="px-6 py-1.5 rounded-full bg-[#6B4D85] text-white hover:bg-[#7e5c99] transition-colors text-sm"
+            >
+              {item}
+            </button>
+          ))}
         </div>
-        <a href="#">À propos</a>
-    </header>
+        <div className="w-[200px] h-[120px] relative">
+          <Image src="/placeholder.svg?height=120&width=200" alt="Camera" fill className="object-contain" />
+        </div>
+      </header>
 
-    <main class="main-content">
-        <a href="paysage.html" class="category-card">
-            <img src="paysage.jpg" alt="Paysage">
-            <div class="category-content">
-                <h2 class="category-title">Paysage</h2>
-                <p class="category-description">Découvrez la beauté naturelle à travers nos clichés de paysages époustouflants.</p>
-            </div>
-        </a>
-        <a href="urbain.html" class="category-card">
-            <img src="urbain.jpg" alt="Urbain">
-            <div class="category-content">
-                <h2 class="category-title">Urbain</h2>
-                <p class="category-description">Explorez l'architecture et la vie citadine à travers nos photos urbaines.</p>
-            </div>
-        </a>
-        <a href="nourriture.html" class="category-card">
-            <img src="nourriture.jpg" alt="Nourriture">
-            <div class="category-content">
-                <h2 class="category-title">Nourriture</h2>
-                <p class="category-description">Savourez des images alléchantes de plats et de délices culinaires.</p>
-            </div>
-        </a>
-        <a href="personnes.html" class="category-card">
-            <img src="personnes.jpg" alt="Personnes">
-            <div class="category-content">
-                <h2 class="category-title">Personnes</h2>
-                <p class="category-description">Capturez l'essence humaine à travers nos portraits et scènes de vie.</p>
-            </div>
-        </a>
-    </main>
+      {/* Main Content */}
+      <main className="w-full min-h-[calc(100vh-180px)] relative">
+        {/* Background Image */}
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YnzgupP2Oixhz6Zi68kwcClOuOxPxi.png"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
 
-    <footer class="footer">
-        <p>&copy; 2024 KogziPhoto - Tous droits réservés</p>
-    </footer>
-</body>
-</html>
+        {/* Grid */}
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-2 gap-8 p-8">
+          {[1, 2, 3, 4].map((i) => (
+            <Card key={i} className="group relative bg-[#f3f3f3] rounded-lg overflow-hidden">
+              <div className="aspect-[3/2] relative">
+                <Image src="/placeholder.svg?height=300&width=450" alt={`Gallery ${i}`} fill className="object-cover" />
+                <Badge
+                  className="absolute bottom-4 right-4 bg-[#4CAF50] hover:bg-[#45a049] text-white"
+                  variant="secondary"
+                >
+                  K
+                </Badge>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </main>
+    </div>
+  )
+}
 
