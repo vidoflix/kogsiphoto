@@ -63,12 +63,7 @@
         .category-card {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            padding: 1.5rem;
-            position: relative;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
@@ -78,30 +73,21 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
+        .category-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
         .category-title {
             font-size: 1.5rem;
             color: #333;
             margin-bottom: 1rem;
-        }
-
-        .category-description {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        .badge {
-            position: absolute;
-            bottom: -10px;
-            right: -10px;
-            width: 30px;
-            height: 30px;
-            background: #00c853;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
         }
 
         .footer {
@@ -133,7 +119,6 @@
     <header class="header">
         <a href="#">Contact</a>
         <div class="logo-container">
-            <!-- Remplacez le chemin par celui de votre logo -->
             <img src="/path-to-your-logo.png" alt="Logo du site">
         </div>
         <a href="#">À propos</a>
@@ -141,34 +126,30 @@
 
     <main class="main-content">
         <div class="categories-grid">
-            <div class="category-card">
-                <div class="content">
+            <a href="paysage.html" class="category-card">
+                <img src="paysage.jpg" alt="Paysage">
+                <div class="category-content">
                     <h2 class="category-title">Paysage</h2>
-                    <p class="category-description"> </p>
                 </div>
-                <div class="badge">K</div>
-            </div>
-            <div class="category-card">
-                <div class="content">
+            </a>
+            <a href="urbain.html" class="category-card">
+                <img src="urbain.jpg" alt="Urbain">
+                <div class="category-content">
                     <h2 class="category-title">Urbain</h2>
-                    <p class="category-description"> </p>
                 </div>
-                <div class="badge">K</div>
-            </div>
-            <div class="category-card">
-                <div class="content">
-                    <h2 class="category-title">Nouriture</h2>
-                    <p class="category-description"> </p>
+            </a>
+            <a href="nourriture.html" class="category-card">
+                <img src="nourriture.jpg" alt="Nourriture">
+                <div class="category-content">
+                    <h2 class="category-title">Nourriture</h2>
                 </div>
-                <div class="badge">K</div>
-            </div>
-            <div class="category-card">
-                <div class="content">
+            </a>
+            <a href="personnes.html" class="category-card">
+                <img src="personnes.jpg" alt="Personnes">
+                <div class="category-content">
                     <h2 class="category-title">Personnes</h2>
-                    <p class="category-description"> </p>
                 </div>
-                <div class="badge">K</div>
-            </div>
+            </a>
         </div>
     </main>
 
