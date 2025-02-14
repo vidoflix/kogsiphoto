@@ -121,21 +121,5 @@
                 alert("Identifiants incorrects !");
             }
         }
-<script>
-        document.addEventListener('keydown', function(event) {
-            // Désactiver les raccourcis clavier de l'inspection
-            if ((event.ctrlKey && event.key === 'I') || 
-                (event.ctrlKey && event.key === 'U') || 
-                (event.ctrlKey && event.key === 'J') || 
-                event.key === 'F12') {
-                event.preventDefault();
-            }
-        });
-
-        // Désactiver le clic droit
-        document.addEventListener('contextmenu', function(event) {
-            event.preventDefault();
-        });
-    </script>
 </body>
 </html>
