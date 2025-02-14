@@ -1,59 +1,140 @@
-"use client"
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KogziPhoto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-import Image from "next/image"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: white;
+        }
 
-export default function Page() {
-  return (
-    <div className="min-h-screen bg-[#000000]">
-      {/* Header */}
-      <header className="w-full bg-[#000000] p-6 flex justify-between items-center">
-        <div className="w-36 h-10 bg-[#f3f3f3] rounded flex items-center justify-center text-black">LOGO EDIT</div>
-        <div className="flex gap-3">
-          {["Portfolio", "Services", "Contact", "À propos"].map((item) => (
-            <button
-              key={item}
-              className="px-6 py-1.5 rounded-full bg-[#6B4D85] text-white hover:bg-[#7e5c99] transition-colors text-sm"
-            >
-              {item}
-            </button>
-          ))}
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #000000;
+        }
+
+        .logo {
+            width: 140px;
+            height: 40px;
+            background-color: #f3f3f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            border-radius: 4px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-button {
+            padding: 6px 24px;
+            background-color: #6B4D85;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .nav-button:hover {
+            background-color: #7e5c99;
+        }
+
+        .camera-image {
+            width: 200px;
+            height: 120px;
+            background-image: url('placeholder.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .main-content {
+            position: relative;
+            min-height: calc(100vh - 160px);
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YnzgupP2Oixhz6Zi68kwcClOuOxPxi.png');
+            background-size: cover;
+            background-position: center;
+            padding: 32px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            position: relative;
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            padding-top: 66.67%; /* 3:2 aspect ratio */
+            background-image: url('fond.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .badge {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">LOGO EDIT</div>
+        <nav class="nav">
+            <button class="nav-button">Portfolio</button>
+            <button class="nav-button">Services</button>
+            <button class="nav-button">Contact</button>
+            <button class="nav-button">À propos</button>
+        </nav>
+        <div class="camera-image"></div>
+    </header>
+
+    <main class="main-content">
+        <div class="grid">
+            <div class="card">
+                <div class="card-image"></div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+            </div>
         </div>
-        <div className="w-[200px] h-[120px] relative">
-          <Image src="/placeholder.svg?height=120&width=200" alt="Camera" fill className="object-contain" />
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="w-full min-h-[calc(100vh-180px)] relative">
-        {/* Background Image */}
-        <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YnzgupP2Oixhz6Zi68kwcClOuOxPxi.png"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-        />
-
-        {/* Grid */}
-        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-2 gap-8 p-8">
-          {[1, 2, 3, 4].map((i) => (
-            <Card key={i} className="group relative bg-[#f3f3f3] rounded-lg overflow-hidden">
-              <div className="aspect-[3/2] relative">
-                <Image src="/placeholder.svg?height=300&width=450" alt={`Gallery ${i}`} fill className="object-cover" />
-                <Badge
-                  className="absolute bottom-4 right-4 bg-[#4CAF50] hover:bg-[#45a049] text-white"
-                  variant="secondary"
-                >
-                  K
-                </Badge>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </main>
-    </div>
-  )
-}
-
+    </main>
+</body>
+</html>
