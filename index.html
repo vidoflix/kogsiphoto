@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KogziPhoto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +13,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #000000;
             color: white;
         }
@@ -21,44 +22,46 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 20px 40px;
             background-color: #000000;
         }
 
         .logo {
             width: 140px;
             height: 40px;
-            background-color: #f3f3f3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black;
-            border-radius: 4px;
+            background-image: url('Photo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .nav {
             display: flex;
-            gap: 12px;
+            gap: 16px;
         }
 
         .nav-button {
-            padding: 6px 24px;
+            padding: 8px 24px;
             background-color: #6B4D85;
             color: white;
             border: none;
-            border-radius: 20px;
+            border-radius: 25px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: 300;
+            transition: all 0.3s ease;
         }
 
         .nav-button:hover {
-            background-color: #7e5c99;
+            background-color: #8A63AB;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(139, 99, 171, 0.3);
         }
 
         .camera-image {
             width: 200px;
             height: 120px;
-            background-image: url('placeholder.jpg');
+            background-image: url('camera.jpg');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -67,33 +70,44 @@
         .main-content {
             position: relative;
             min-height: calc(100vh - 160px);
-            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YnzgupP2Oixhz6Zi68kwcClOuOxPxi.png');
+            background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
-            padding: 32px;
+            padding: 40px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .card {
             position: relative;
-            background-color: #f3f3f3;
-            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .card-image {
             width: 100%;
             padding-top: 66.67%; /* 3:2 aspect ratio */
-            background-image: url('fond.jpg');
             background-size: cover;
             background-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
         }
 
         .badge {
@@ -102,15 +116,45 @@
             right: 16px;
             background-color: #4CAF50;
             color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 20px;
             font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-content {
+            transform: translateY(0);
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            font-weight: 300;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">LOGO EDIT</div>
+        <div class="logo"></div>
         <nav class="nav">
             <button class="nav-button">Portfolio</button>
             <button class="nav-button">Services</button>
@@ -123,16 +167,32 @@
     <main class="main-content">
         <div class="grid">
             <div class="card">
-                <div class="card-image"></div>
+                <div class="card-image" style="background-image: url('paysage.jpg');"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Paysage</h2>
+                    <p class="card-description">Découvrez nos magnifiques paysages</p>
+                </div>
             </div>
             <div class="card">
-                <div class="card-image"></div>
+                <div class="card-image" style="background-image: url('urbain.jpg');"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Urbain</h2>
+                    <p class="card-description">Explorez la vie urbaine en images</p>
+                </div>
             </div>
             <div class="card">
-                <div class="card-image"></div>
+                <div class="card-image" style="background-image: url('nourriture.jpg');"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Nourriture</h2>
+                    <p class="card-description">Savourez nos photos culinaires</p>
+                </div>
             </div>
             <div class="card">
-                <div class="card-image"></div>
+                <div class="card-image" style="background-image: url('personnes.jpg');"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Personnes</h2>
+                    <p class="card-description">Portraits et scènes de vie</p>
+                </div>
             </div>
         </div>
     </main>
