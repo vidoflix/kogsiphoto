@@ -43,17 +43,13 @@
             background-position: center;
             filter: invert(1);
         }
-
-        /* Correction ici */
         .logo2 {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: white;
-            padding: 5px;
+            width: 50px; /* Taille du logo */
+            height: auto;
+            padding: 5px; /* Ajoute un petit espace autour */
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
@@ -95,6 +91,78 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 20px; /* Arrondi les coins */
+
+        }
+
+        .category {
+            position: relative;
+            height: 300px;
+            perspective: 1000px;
+            border-radius: 20px; /* Arrondi les coins */
+
+        }
+
+        .category-stack {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+            border-radius: 20px; /* Arrondi les coins */
+
+        }
+
+        .category:hover .category-stack {
+            transform: translateZ(-100px);
+        }
+
+        .category-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s, opacity 0.5s;
+            backface-visibility: hidden;
+            border-radius: 20px; /* Arrondi les coins */
+            border: 5px solid white;
+
+        }
+
+        .category:hover .category-image:nth-child(1) {
+            transform: translateZ(0) translateX(0);
+            opacity: 1;
+        }
+
+        .category:hover .category-image:nth-child(2) {
+            transform: translateZ(-50px) translateX(-20px);
+            opacity: 0.8;
+        }
+
+        .category:hover .category-image:nth-child(3) {
+            transform: translateZ(-100px) translateX(-40px);
+            opacity: 0.6;
+        }
+
+        .category-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
@@ -109,5 +177,62 @@
             <button class="nav-button">À propos</button>
         </nav>
     </header>
+
+    <main class="categories">
+        <div class="category">
+            <h2 class="category-title">Paysage</h2>
+            <div class="category-stack">
+                <div class="category-image" style="background-image: url('paysage.jpg');"></div>
+                <div class="category-image" style="background-image: url('paysage.jpg');"></div>
+                <div class="category-image" style="background-image: url('paysage.jpg');"></div>
+            </div>
+        </div>
+        <div class="category">
+            <h2 class="category-title">Urbain</h2>
+            <div class="category-stack">
+                <div class="category-image" style="background-image: url('urbain.jpg');"></div>
+                <div class="category-image" style="background-image: url('urbain.jpg');"></div>
+                <div class="category-image" style="background-image: url('urbain.jpg');"></div>
+            </div>
+        </div>
+        <div class="category">
+            <h2 class="category-title">Autre</h2>
+            <div class="category-stack">
+                <div class="category-image" style="background-image: url('nourriture.jpg');"></div>
+                <div class="category-image" style="background-image: url('nourriture.jpg');"></div>
+                <div class="category-image" style="background-image: url('nourriture.jpg');"></div>
+            </div>
+        </div>
+        <div class="category">
+            <h2 class="category-title">Personnes</h2>
+            <div class="category-stack">
+                <div class="category-image" style="background-image: url('personnes.jpg');"></div>
+                <div class="category-image" style="background-image: url('personnes.jpg');"></div>
+                <div class="category-image" style="background-image: url('personnes.jpg');"></div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'l') {
+                window.location.href = "connexion.html";
+            }
+        });
+        document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+});
+        document.addEventListener("keydown", function(event) {
+            if ((event.ctrlKey && event.key === "c") || (event.ctrlKey && event.key === "v") || (event.ctrlKey && event.key === "x")) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === 'I' || event.key === 'i' || event.key === 'U' || event.key === 'u' || event.key === 'J' || event.key === 'j')) {
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
