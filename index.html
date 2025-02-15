@@ -126,13 +126,16 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
+            object-fit: cover;
+            object-position: center;
             transition: transform 0.5s, opacity 0.5s;
             backface-visibility: hidden;
             border-radius: 20px;
             border: 5px solid white;
-            object-fit: cover;
+        }
+
+        .category-image-portrait {
+            object-position: top center;
         }
 
         .category:hover .category-image:nth-child(1) {
@@ -195,17 +198,17 @@
         <div class="category">
             <h2 class="category-title">Autre</h2>
             <div class="category-stack">
-                <img src="nourriture.png" alt="Autre" class="category-image">
-                <img src="nourriture.png" alt="Autre" class="category-image">
-                <img src="nourriture.png" alt="Autre" class="category-image">
+                <img src="nourriture.png" alt="Autre" class="category-image category-image-portrait">
+                <img src="nourriture.png" alt="Autre" class="category-image category-image-portrait">
+                <img src="nourriture.png" alt="Autre" class="category-image category-image-portrait">
             </div>
         </div>
         <div class="category">
             <h2 class="category-title">Personnes</h2>
             <div class="category-stack">
-                <img src="personnes.png" alt="Personnes" class="category-image">
-                <img src="personnes.png" alt="Personnes" class="category-image">
-                <img src="personnes.png" alt="Personnes" class="category-image">
+                <img src="personnes.png" alt="Personnes" class="category-image category-image-portrait">
+                <img src="personnes.png" alt="Personnes" class="category-image category-image-portrait">
+                <img src="personnes.png" alt="Personnes" class="category-image category-image-portrait">
             </div>
         </div>
     </main>
