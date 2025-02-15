@@ -110,13 +110,11 @@
             overflow: hidden;
         }
 
-        /* Les deux premières catégories prennent 2 colonnes chacune */
         .category:nth-child(1),
         .category:nth-child(2) {
             grid-column: span 2;
         }
 
-        /* Les deux dernières catégories prennent 2 colonnes chacune */
         .category:nth-child(3),
         .category:nth-child(4) {
             grid-column: span 2;
@@ -146,7 +144,6 @@
             border: 5px solid white;
         }
 
-        /* Style spécifique pour la catégorie "Autre" */
         .category:nth-child(3) .category-image {
             width: auto;
             height: 100%;
@@ -154,7 +151,6 @@
             transform: translateX(-50%);
         }
 
-        /* Style spécifique pour la catégorie "Personnes" */
         .category:nth-child(4) .category-image {
             width: auto;
             height: 120%;
@@ -189,7 +185,6 @@
             z-index: 10;
         }
 
-        /* Ajustement pour les titres des catégories inférieures */
         .category:nth-child(3) .category-title,
         .category:nth-child(4) .category-title {
             font-size: 20px;
