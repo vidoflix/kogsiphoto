@@ -134,30 +134,48 @@
             border: 5px solid white;
         }
 
-        .category:nth-child(3) .category-image,
-        .category:nth-child(4) .category-image {
+        /* Style spécifique pour la catégorie "Autre" */
+        .category:nth-child(3) .category-image {
             width: auto;
             height: 100%;
             left: 50%;
             transform: translateX(-50%);
         }
 
-        .category:nth-child(3):hover .category-image:nth-child(1),
+        .category:nth-child(3):hover .category-image:nth-child(1) {
+            transform: translateZ(0) translateX(-50%);
+        }
+
+        .category:nth-child(3):hover .category-image:nth-child(2) {
+            transform: translateZ(-50px) translateX(calc(-50% - 20px));
+        }
+
+        .category:nth-child(3):hover .category-image:nth-child(3) {
+            transform: translateZ(-100px) translateX(calc(-50% - 40px));
+        }
+
+        /* Style spécifique pour la catégorie "Personnes" */
+        .category:nth-child(4) .category-image {
+            width: auto;
+            height: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            object-position: top;
+        }
+
         .category:nth-child(4):hover .category-image:nth-child(1) {
             transform: translateZ(0) translateX(-50%);
         }
 
-        .category:nth-child(3):hover .category-image:nth-child(2),
         .category:nth-child(4):hover .category-image:nth-child(2) {
             transform: translateZ(-50px) translateX(calc(-50% - 20px));
         }
 
-        .category:nth-child(3):hover .category-image:nth-child(3),
         .category:nth-child(4):hover .category-image:nth-child(3) {
             transform: translateZ(-100px) translateX(calc(-50% - 40px));
         }
 
-
+        /* Styles généraux pour les effets de survol */
         .category:hover .category-image:nth-child(1) {
             transform: translateZ(0) translateX(0);
             opacity: 1;
