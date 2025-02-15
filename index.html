@@ -128,15 +128,18 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
             transition: transform 0.5s, opacity 0.5s;
             backface-visibility: hidden;
             border-radius: 20px;
             border: 5px solid white;
         }
 
-        .category-image-portrait {
-            object-position: top center;
+        /* Modification pour les images en format portrait */
+        .category:nth-child(3) .category-image,
+        .category:nth-child(4) .category-image {
+            object-fit: contain;
+            background-color: black;
+            padding: 0;
         }
 
         .category:hover .category-image:nth-child(1) {
