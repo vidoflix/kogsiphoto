@@ -43,6 +43,7 @@
             background-position: center;
             filter: invert(1);
         }
+
         .logo2 {
             position: absolute;
             top: 10px;
@@ -198,9 +199,9 @@
         <div class="category">
             <h2 class="category-title">Autre</h2>
             <div class="category-stack">
-                <img src="nourriture.png" alt="Autre" class="category-image category-image-portrait">
-                <img src="nourriture.png" alt="Autre" class="category-image category-image-portrait">
-                <img src="nourriture.png" alt="Autre" class="category-image category-image-portrait">
+                <img src="autres.png" alt="Autre" class="category-image category-image-portrait">
+                <img src="autres.png" alt="Autre" class="category-image category-image-portrait">
+                <img src="autres.png" alt="Autre" class="category-image category-image-portrait">
             </div>
         </div>
         <div class="category">
@@ -212,28 +213,6 @@
             </div>
         </div>
     </main>
-    <script>
-        document.addEventListener("keydown", function(event) {
-            if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'l') {
-                window.location.href = "connexion.html";
-            }
-        });
-        document.addEventListener("contextmenu", function(event) {
-            event.preventDefault();
-        });
-        document.addEventListener("keydown", function(event) {
-            if ((event.ctrlKey && event.key === "c") || (event.ctrlKey && event.key === "v") || (event.ctrlKey && event.key === "x")) {
-                event.preventDefault();
-            }
-        });
-    </script>
-    <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.ctrlKey && (event.key === 'I' || event.key === 'i' || event.key === 'U' || event.key === 'u' || event.key === 'J' || event.key === 'j')) {
-                event.preventDefault();
-            }
-        });
-    </script>
 </body>
 </html>
 
