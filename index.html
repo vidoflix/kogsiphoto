@@ -134,13 +134,29 @@
             border: 5px solid white;
         }
 
-        /* Modification pour les images en format portrait */
         .category:nth-child(3) .category-image,
         .category:nth-child(4) .category-image {
-            object-fit: contain;
-            background-color: black;
-            padding: 0;
+            width: auto;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
         }
+
+        .category:nth-child(3):hover .category-image:nth-child(1),
+        .category:nth-child(4):hover .category-image:nth-child(1) {
+            transform: translateZ(0) translateX(-50%);
+        }
+
+        .category:nth-child(3):hover .category-image:nth-child(2),
+        .category:nth-child(4):hover .category-image:nth-child(2) {
+            transform: translateZ(-50px) translateX(calc(-50% - 20px));
+        }
+
+        .category:nth-child(3):hover .category-image:nth-child(3),
+        .category:nth-child(4):hover .category-image:nth-child(3) {
+            transform: translateZ(-100px) translateX(calc(-50% - 40px));
+        }
+
 
         .category:hover .category-image:nth-child(1) {
             transform: translateZ(0) translateX(0);
@@ -202,17 +218,17 @@
         <div class="category">
             <h2 class="category-title">Autre</h2>
             <div class="category-stack">
-                <img src="autres.png" alt="Autre" class="category-image category-image-portrait">
-                <img src="autres.png" alt="Autre" class="category-image category-image-portrait">
-                <img src="autres.png" alt="Autre" class="category-image category-image-portrait">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/autres-pDA86UFSULblcZkTFJfYpZ6davqEFh.png" alt="Autre" class="category-image">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/autres-pDA86UFSULblcZkTFJfYpZ6davqEFh.png" alt="Autre" class="category-image">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/autres-pDA86UFSULblcZkTFJfYpZ6davqEFh.png" alt="Autre" class="category-image">
             </div>
         </div>
         <div class="category">
             <h2 class="category-title">Personnes</h2>
             <div class="category-stack">
-                <img src="personnes.png" alt="Personnes" class="category-image category-image-portrait">
-                <img src="personnes.png" alt="Personnes" class="category-image category-image-portrait">
-                <img src="personnes.png" alt="Personnes" class="category-image category-image-portrait">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/personnes-yIZEAr2ryP6vKVN9emG4QJn7fzhkUH.png" alt="Personnes" class="category-image">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/personnes-yIZEAr2ryP6vKVN9emG4QJn7fzhkUH.png" alt="Personnes" class="category-image">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/personnes-yIZEAr2ryP6vKVN9emG4QJn7fzhkUH.png" alt="Personnes" class="category-image">
             </div>
         </div>
     </main>
