@@ -95,7 +95,8 @@
 
         .categories {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 300px 300px;
             gap: 20px;
             padding: 20px;
             max-width: 1200px;
@@ -104,10 +105,21 @@
 
         .category {
             position: relative;
-            height: 300px;
             perspective: 1000px;
             border-radius: 20px;
             overflow: hidden;
+        }
+
+        /* Les deux premières catégories prennent 2 colonnes chacune */
+        .category:nth-child(1),
+        .category:nth-child(2) {
+            grid-column: span 2;
+        }
+
+        /* Les deux dernières catégories prennent 2 colonnes chacune */
+        .category:nth-child(3),
+        .category:nth-child(4) {
+            grid-column: span 2;
         }
 
         .category-stack {
@@ -142,18 +154,6 @@
             transform: translateX(-50%);
         }
 
-        .category:nth-child(3):hover .category-image:nth-child(1) {
-            transform: translateZ(0) translateX(-50%);
-        }
-
-        .category:nth-child(3):hover .category-image:nth-child(2) {
-            transform: translateZ(-50px) translateX(calc(-50% - 20px));
-        }
-
-        .category:nth-child(3):hover .category-image:nth-child(3) {
-            transform: translateZ(-100px) translateX(calc(-50% - 40px));
-        }
-
         /* Style spécifique pour la catégorie "Personnes" */
         .category:nth-child(4) .category-image {
             width: auto;
@@ -163,32 +163,19 @@
             object-position: top;
         }
 
+        .category:nth-child(3):hover .category-image:nth-child(1),
         .category:nth-child(4):hover .category-image:nth-child(1) {
             transform: translateZ(0) translateX(-50%);
         }
 
+        .category:nth-child(3):hover .category-image:nth-child(2),
         .category:nth-child(4):hover .category-image:nth-child(2) {
             transform: translateZ(-50px) translateX(calc(-50% - 20px));
         }
 
+        .category:nth-child(3):hover .category-image:nth-child(3),
         .category:nth-child(4):hover .category-image:nth-child(3) {
             transform: translateZ(-100px) translateX(calc(-50% - 40px));
-        }
-
-        /* Styles généraux pour les effets de survol */
-        .category:hover .category-image:nth-child(1) {
-            transform: translateZ(0) translateX(0);
-            opacity: 1;
-        }
-
-        .category:hover .category-image:nth-child(2) {
-            transform: translateZ(-50px) translateX(-20px);
-            opacity: 0.8;
-        }
-
-        .category:hover .category-image:nth-child(3) {
-            transform: translateZ(-100px) translateX(-40px);
-            opacity: 0.6;
         }
 
         .category-title {
@@ -200,6 +187,14 @@
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             z-index: 10;
+        }
+
+        /* Ajustement pour les titres des catégories inférieures */
+        .category:nth-child(3) .category-title,
+        .category:nth-child(4) .category-title {
+            font-size: 20px;
+            bottom: 15px;
+            left: 15px;
         }
     </style>
 </head>
