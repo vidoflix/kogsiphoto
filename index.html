@@ -143,8 +143,7 @@
             border: 5px solid white;
         }
 
-        .category:nth-child(3) .category-image,
-        .category:nth-child(4) .category-image {
+        .category:nth-child(2) .category-image {
             object-fit: contain;
             width: auto;
             height: 100%;
@@ -152,19 +151,45 @@
             transform: translateX(-50%);
         }
 
-        .category:nth-child(1):hover .category-image:nth-child(1),
         .category:nth-child(2):hover .category-image:nth-child(1) {
-            transform: translateZ(0);
+            transform: translateZ(0) translateX(-50%);
         }
 
-        .category:nth-child(1):hover .category-image:nth-child(2),
         .category:nth-child(2):hover .category-image:nth-child(2) {
-            transform: translateZ(-50px) translateX(-20px);
+            transform: translateZ(-50px) translateX(calc(-50% - 20px));
         }
 
-        .category:nth-child(1):hover .category-image:nth-child(3),
         .category:nth-child(2):hover .category-image:nth-child(3) {
-            transform: translateZ(-100px) translateX(-40px);
+            transform: translateZ(-100px) translateX(calc(-50% - 40px));
+        }
+
+        .category:nth-child(3) .category-image {
+            object-fit: contain;
+            width: auto;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .category:nth-child(3):hover .category-image:nth-child(1) {
+            transform: translateZ(0) translateX(-50%);
+        }
+
+        .category:nth-child(3):hover .category-image:nth-child(2) {
+            transform: translateZ(-50px) translateX(calc(-50% - 20px));
+        }
+
+        .category:nth-child(3):hover .category-image:nth-child(3) {
+            transform: translateZ(-100px) translateX(calc(-50% - 40px));
+        }
+
+        /* .category:nth-child(3) .category-image,
+        .category:nth-child(4) .category-image {
+            object-fit: contain;
+            width: auto;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .category:nth-child(3):hover .category-image:nth-child(1),
@@ -180,7 +205,8 @@
         .category:nth-child(3):hover .category-image:nth-child(3),
         .category:nth-child(4):hover .category-image:nth-child(3) {
             transform: translateZ(-100px) translateX(calc(-50% - 40px));
-        }
+        } */
+
 
         .category-title {
             position: absolute;
@@ -209,7 +235,7 @@
 
     <main class="categories">
         <div class="category">
-            <h2 class="category-title">Paysage</h2>
+            <h2 class="category-title"></h2>
             <div class="category-stack">
                 <img src="paysage.png" alt="Paysage" class="category-image">
                 <img src="paysage.png" alt="Paysage" class="category-image">
@@ -217,7 +243,7 @@
             </div>
         </div>
         <div class="category">
-            <h2 class="category-title">Personnes</h2>
+            <h2 class="category-title"></h2>
             <div class="category-stack">
                 <img src="personnes.png" alt="Personnes" class="category-image">
                 <img src="personnes.png" alt="Personnes" class="category-image">
@@ -225,7 +251,7 @@
             </div>
         </div>
         <div class="category">
-            <h2 class="category-title">Autre</h2>
+            <h2 class="category-title"></h2>
             <div class="category-stack">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/autres-pDA86UFSULblcZkTFJfYpZ6davqEFh.png" alt="Autre" class="category-image">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/autres-pDA86UFSULblcZkTFJfYpZ6davqEFh.png" alt="Autre" class="category-image">
@@ -233,7 +259,7 @@
             </div>
         </div>
         <div class="category">
-            <h2 class="category-title">Urbain</h2>
+            <h2 class="category-title"></h2>
             <div class="category-stack">
                 <img src="urbain.png" alt="Urbain" class="category-image">
                 <img src="urbain.png" alt="Urbain" class="category-image">
