@@ -32,17 +32,25 @@
             justify-content: space-between;
             padding: 0 20px;
         }
-
+        .logo {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            width: 50px;
+            height: 30px;
+            background-image: url('Photo1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         .logo2 {
             height: 40px;
             width: auto;
         }
-
         .nav {
             display: flex;
             gap: 10px;
         }
-
         .nav-button {
             padding: 5px 12px;
             background-color: #A67344;
@@ -55,13 +63,11 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
         .nav-button:hover {
             background-color: #bc7887;
             transform: translateY(-2px);
             box-shadow: 0 2px 4px rgba(139, 99, 171, 0.3);
         }
-
         .services-container {
             max-width: 800px;
             margin: 40px auto;
@@ -70,7 +76,6 @@
             gap: 20px;
             padding: 20px;
         }
-
         .service-card {
             background-color: rgba(255, 178, 153, 0.9);
             border-radius: 10px;
@@ -80,11 +85,9 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-
         .service-card:hover {
             transform: translateY(-5px);
         }
-
         .service-title {
             color: #333;
             font-size: 1.5rem;
@@ -92,7 +95,6 @@
             position: relative;
             padding-left: 15px;
         }
-
         .service-title::before {
             content: '';
             position: absolute;
@@ -104,17 +106,14 @@
             background-color: #A67344;
             border-radius: 2px;
         }
-
         @media (max-width: 768px) {
             .header {
                 padding: 0 10px;
             }
-
             .nav-button {
                 padding: 4px 8px;
                 font-size: 10px;
             }
-
             .services-container {
                 padding: 0 15px;
             }
@@ -124,6 +123,7 @@
 <body>
     <header class="header">
         <img class="logo2" src="logo.png" alt="Logo">
+        <img class="logo2" src="Photo1.png" alt="Logo">
         <nav class="nav">
             <a href="#" class="nav-button">Portfolio</a>
             <a href="service" class="nav-button">Services</a>
