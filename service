@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('fond.jpg');
+            background-size: cover;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .services-container {
+            max-width: 800px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: rgba(255, 178, 153, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 150px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-title {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .service-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 80%;
+            background-color: #ff6b35;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .services-container {
+                padding: 0 15px;
+            }
+            
+            nav {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="services-container">
+        <section class="service-card">
+            <h2 class="service-title">Service 1</h2>
+            <div class="service-content">
+                <!-- Content for Service 1 -->
+            </div>
+        </section>
+
+        <section class="service-card">
+            <h2 class="service-title">Service 2</h2>
+            <div class="service-content">
+                <!-- Content for Service 2 -->
+            </div>
+        </section>
+
+        <section class="service-card">
+            <h2 class="service-title">Service 3</h2>
+            <div class="service-content">
+                <!-- Content for Service 3 -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
