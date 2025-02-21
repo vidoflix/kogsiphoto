@@ -17,8 +17,6 @@
             font-family: 'Poppins', sans-serif;
             background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSCF2526.JPG-IMM9Wne2OSDCiwFnpq8DfZ85Nae8RD.jpeg');
             background-size: cover;
-            background-position: center top;
-            background-attachment: scroll;
             color: white;
             min-height: 100vh;
             display: flex;
@@ -27,45 +25,52 @@
 
         .header {
             position: relative;
-            height: 52px;
+            height: 90vh;
             background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MddDoyyaAUrr7e9cMUtmdW042TP1KW.png');
             background-size: cover;
-            background-position: center top;
+            background-position: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
+            overflow: hidden;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .logo {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            width: 800px;
+            height: 300px;
+            background-image: url('Photo1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .logo2 {
-            height: 40px;
-            width: auto;
-        }
-        .logo {
-            height: 80px;
-            width: auto;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 75px;
+            height: auto;
+            padding: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .nav {
+            position: absolute;
+            top: 20px;
+            right: 40px;
             display: flex;
-            gap: 10px;
+            gap: 16px;
         }
 
         .nav-button {
-            padding: 5px 12px;
+            padding: 8px 24px;
             background-color: #A67344;
             color: white;
             border: none;
-            border-radius: 15px;
+            border-radius: 25px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 300;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -74,11 +79,23 @@
         .nav-button:hover {
             background-color: #bc7887;
             transform: translateY(-2px);
-            box-shadow: 0 2px 4px rgba(139, 99, 171, 0.3);
+            box-shadow: 0 4px 8px rgba(139, 99, 171, 0.3);
+        }
+
+        .camera-image {
+            position: absolute;
+            right: 0.1%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 700px;
+            height: 550px;
+            background-image: url('camera.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .about-container {
-            flex: 1;
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
@@ -91,7 +108,6 @@
         .about-content {
             flex: 1;
             max-width: 600px;
-            order: 1; /* Change l'ordre pour mettre le texte à gauche */
         }
 
         .about-title {
@@ -119,7 +135,6 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            order: 2; /* Change l'ordre pour mettre l'image à droite */
         }
 
         .about-image img {
@@ -139,12 +154,28 @@
 
         @media (max-width: 768px) {
             .header {
-                padding: 0 10px;
+                height: 60vh;
+            }
+
+            .logo {
+                width: 400px;
+                height: 150px;
+            }
+
+            .camera-image {
+                width: 350px;
+                height: 275px;
+            }
+
+            .nav {
+                top: auto;
+                bottom: 20px;
+                right: 20px;
             }
 
             .nav-button {
-                padding: 4px 8px;
-                font-size: 10px;
+                padding: 6px 16px;
+                font-size: 12px;
             }
 
             .about-container {
@@ -155,34 +186,24 @@
             .about-image {
                 max-width: 100%;
                 height: 300px;
-                order: -1;
-            }
-
-            .about-content {
-                order: 2;
             }
 
             .about-title {
                 font-size: 2rem;
-            }
-
-            .about-text {
-                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo-container">
-            <img class="logo2" src="logo.png" alt="Logo">
-            <img class="logo" src="Photo1.png" alt="Logo">
-        </div>
+        <img class="logo2" src="logo.png" alt="Logo">
+        <div class="logo"></div>
+        <div class="camera-image"></div>
         <nav class="nav">
             <a href="#" class="nav-button">Portfolio</a>
             <a href="service" class="nav-button">Services</a>
             <a href="#" class="nav-button">Contact</a>
-            <a href="à_propos.html" class="nav-button">À propos</a>
+            <a href="#" class="nav-button">À propos</a>
         </nav>
     </header>
 
