@@ -55,6 +55,15 @@
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
+        .logo-link {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            width: 800px;
+            height: 300px;
+            z-index: 10;
+        }
+
         .nav {
             position: absolute;
             top: 20px;
@@ -181,8 +190,12 @@
 </head>
 <body>
     <header class="header">
-        <img class="logo2" src="logo.png" alt="Logo">
-        <div class="logo"></div>
+        <a href="index.html">
+            <img class="logo2" src="logo.png" alt="Logo">
+        </a>
+        <a href="index.html" class="logo-link">
+            <div class="logo"></div>
+        </a>
         <div class="camera-image"></div>
         <nav class="nav">
             <a href="#" class="nav-button">Portfolio</a>
